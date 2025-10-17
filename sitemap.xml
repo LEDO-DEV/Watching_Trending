@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>/about.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>/contact.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>/terms.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>/tags/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>/tags/tech.html</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>/tags/entertainment.html</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>/tags/lifestyle.html</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>/tags/growth.html</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>/tags/smart-home.html</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>/blog/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>/blog/page/2/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>/blog/ai-search-trends-2025.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>/blog/streaming-bundles-usa.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>/blog/healthy-micro-habits.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>/blog/digital-ad-trends-small-business.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>/blog/eco-smart-gadgets-2025.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+</urlset>
+
