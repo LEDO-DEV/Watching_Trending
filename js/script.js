@@ -9,7 +9,7 @@
   const THEME_KEY = 'wt-theme';
   const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
   const savedTheme = localStorage.getItem(THEME_KEY);
-  const current = savedTheme || (prefersLight ? 'light' : 'dark');
+  const current = savedTheme || 'dark';
   if(current === 'light'){ document.documentElement.setAttribute('data-theme','light'); }
   const updateToggleText = (btn)=>{
     if(!btn) return; const isLight = document.documentElement.getAttribute('data-theme')==='light';
