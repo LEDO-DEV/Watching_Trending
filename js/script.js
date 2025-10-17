@@ -69,7 +69,7 @@
     const s = document.createElement('script');
     s.id = 'plausible-js';
     s.defer = true;
-    s.setAttribute('data-domain','watchingtrending.site'); // TODO: đổi thành domain thật khi deploy
+    s.setAttribute('data-domain','watchingtrending.click');
     s.src = 'https://plausible.io/js/script.js';
     document.head.appendChild(s);
   }
