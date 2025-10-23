@@ -1,6 +1,12 @@
 name: Auto Update Sitemap for watchingtrending.click
 
 on:
+  # Trigger khi Cloudflare Pages build xong
+  workflow_run:
+    workflows: ["Pages build and deployment"]
+    types:
+      - completed
+  # Cũng có thể trigger khi push lên main (dự phòng)
   push:
     branches:
       - main
@@ -8,6 +14,7 @@ on:
 jobs:
   generate-sitemap:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'push' }}
 
     steps:
       - name: Checkout repository
@@ -37,7 +44,7 @@ jobs:
           git diff --cached --quiet || git commit -m "Auto-update sitemap.xml [skip ci]"
           git push https://LEDO-DEV:${{ secrets.GH_TOKEN }}@github.com/LEDO-DEV/Watching_Trending.git main
 
-      - name: Ping Google to reindex
+      - name: Ping Google & Bing to reindex
         run: |
           curl -s "https://www.google.com/ping?sitemap=https://watchingtrending.click/sitemap.xml" || true
           curl -s "https://www.bing.com/ping?sitemap=https://watchingtrending.click/sitemap.xml" || true
