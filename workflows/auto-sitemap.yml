@@ -1,0 +1,43 @@
+name: Auto Update Sitemap for watchingtrending.click
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate-sitemap:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install sitemap generator
+        run: npm install -g sitemap-generator-cli
+
+      - name: Generate sitemap.xml
+        run: |
+          npx sitemap-generator-cli https://watchingtrending.click \
+            --output ./sitemap.xml \
+            --max-depth 3 \
+            --strip-querystring true \
+            --last-mod true
+
+      - name: Commit updated sitemap
+        run: |
+          git config user.name "LEDO-DEV"
+          git config user.email "levando.oscar@gmail.com"
+          git add sitemap.xml || true
+          git diff --cached --quiet || git commit -m "Auto-update sitemap.xml [skip ci]"
+          git push
+
+      - name: Ping Google to reindex
+        run: |
+          curl -s "https://www.google.com/ping?sitemap=https://watchingtrending.click/sitemap.xml" || true
+          curl -s "https://www.bing.com/ping?sitemap=https://watchingtrending.click/sitemap.xml" || true
