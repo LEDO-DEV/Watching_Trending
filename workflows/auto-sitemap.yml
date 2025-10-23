@@ -35,7 +35,7 @@ jobs:
           git config user.email "levando.oscar@gmail.com"
           git add sitemap.xml || true
           git diff --cached --quiet || git commit -m "Auto-update sitemap.xml [skip ci]"
-          git push
+          git push https://LEDO-DEV:${{ secrets.GH_TOKEN }}@github.com/LEDO-DEV/Watching_Trending.git main
 
       - name: Ping Google to reindex
         run: |
